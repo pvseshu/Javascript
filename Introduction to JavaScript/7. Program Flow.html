@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logical Operators</title>
+	<script>
+		var myVar = "seshu";
+		
+		function testLoops(){
+			var i = 0;
+			
+			//while loop
+			while(i < 5){
+				console.log("i value " + i);
+				i++; //i = i + 1;
+			} 
+			
+			//do while loops
+			do{
+				console.log("do while -- > i value " + i);
+			}while(i<5);
+			
+			//for loops
+			for(var temp=1; temp < 5; temp++){
+				console.log("temp value " + temp);
+			}
+			
+			//break the loop
+			i = 1;
+			while(i < 5){
+				console.log("i value " + i);
+				if(i == 3){
+					break;
+				}
+				i++;
+			}
+		}
+		
+		function testFunctions(){
+			console.log("testFunctions value adding 1 and 3 ==>" + addingNumbers(1,3));
+			console.log("testFunctions value adding 2 and 3 ==>" + addingNumbers(2,3));
+			
+			console.log("testFunctions value adding 2 and 5 ==>" + addingNumbers(2,5));
+		}
+		
+		
+		//adding 2 numbers, if sum of 2 numbers is even return value, if odd print value. (Advantage of javascript, the same function
+		// can retun value  and some times without returning value can complete execution depend on condition)
+		
+		function addingNumbers(value1, value2){
+			var finalValue;
+			finalValue = value1 + value2;
+			if(finalValue%2 == 0){
+				return finalValue;
+			}else if(finalValue == 7){
+				return "sev7";
+			}else{
+				console.log("addingNumbers function " + finalValue);
+			}
+		}
+		
+		function testSwitch(){
+		
+			noToName(1);
+			noToName(2);
+			noToName(3);
+		}
+		
+		function noToName(value){
+			switch(value){
+				case 1:
+					console.log("one");
+					break;
+				case 3:
+					console.log("three");
+					break;
+				default:
+					console.log("default value");
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Logical Operators</h1>
+	<input type="submit" value="Loops" onclick="testLoops()"> 
+	
+	<input type="submit" value="Functions" onclick="testFunctions()"> 
+	
+	<input type="submit" value="Switch" onclick="testSwitch()"> 
+
+</body>
+</html>

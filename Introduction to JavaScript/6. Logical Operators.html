@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logical Operators</title>
+	<script>
+		var myVar = "seshu";
+		function testOperators(){
+			var str = "1";
+			var id = 1;
+			if(str == "1"){
+				console.log('first');
+			}
+			
+			if(id == "1"){
+				console.log('second true');
+			}else{
+				console.log('second false');
+			}
+			
+			if(id == str){
+				console.log('third true');
+			}else{
+				console.log('third false');
+			}
+			
+			if(id === str){
+				console.log('third true');
+			}else{
+				console.log('third false');
+			}
+			
+		}
+		
+		
+
+	</script>
+</head>
+<body>
+	<h1>Logical Operators</h1>
+	<input type="submit" value="Operators" onclick="testOperators()"> 
+
+</body>
+</html>

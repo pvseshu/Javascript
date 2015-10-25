@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error handling</title>
+	<script>
+		function test(){
+			console.log(convertDolToRup(10));
+			console.log(convertPoundToRup(10));
+		}
+		
+		function test1(){
+			console.log(dolToRup(10));
+			console.log(convertPoundToRup(10));
+		}
+		
+		function convertDolToRup(value){
+			try{
+				var price ;
+				price = value * currentDolVal;
+				return price;
+			}catch(err){
+				console.log("error in convertDolToRup" + err);
+			}
+		}
+		
+		function dolToRup(value){
+			var price ;
+			price = price * currentDolVal;
+			return price;
+		}
+		
+		function convertPoundToRup(value){
+			try{
+				var price ;
+				var currentPoundVal = 98;
+				if(typeof value == 'undefined'  || value == 0){
+					throw "no input received";
+				}
+				price = value * currentPoundVal;
+				return price;
+			}catch(err){
+				console.log("error in convertPoundToRup " + err);
+			}finally{
+				console.log('final convertPoundToRup');
+			}
+		}
+		
+		function test2(){
+			console.log(convertPoundToRup());
+		}
+		
+		test1();
+		//test();
+		//test2();
+
+	</script>
+</head>
+<body>
+	<h1>Error handling</h1>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String properties</title>
+	<script>
+		function test(){
+			var str = "my test string";
+			console.log(str);
+			
+			console.log(str.length);
+			str = "I am \"frontend developer\"";
+			console.log(str);
+			str = "I am \n \"frontend developer\"";
+			console.log(str);
+			
+			str = "i am working as frontend developer and java developer";
+			console.log(str.indexOf("developer"));
+			
+			console.log(str.lastIndexOf("developer"));
+			str = str.replace("developer", "DEVELOPER");
+			console.log(str);
+			console.log(str.search("developer"));  // retuns index of developer
+			console.log(str.search("syntel")); // return -1 if the searchstring not available
+
+			var strArr = str.split(" ");
+			console.log(strArr);
+			
+			console.log(str.substr(2,4)); //2 index 4- count of words
+			console.log(str.substring(2,4));
+			console.log(str.toLowerCase());
+			console.log(str.toUpperCase());
+		}
+		
+		test();
+	</script>
+</head>
+<body>
+	<h1>String properties</h1>
+</body>
+</html>

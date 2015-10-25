@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objects</title>
+	<script>
+		function test(){
+			var obj = {};   //creating empty object
+			console.log(obj);
+			
+			var obj1 = {name:"seshu", employer: "syntel"} ;  // creating object with properties
+			console.log(obj1);
+			
+			obj1.empId = "5025036";  //adding new property to existing object
+			console.log(obj1);
+			
+			
+			console.log(obj1.employer); //access object property
+			
+			//adding function to object
+			obj1.toString = function(){
+				var finalStr = this.name + " " + this.employer + " " + this.empId;
+				return finalStr;
+			}
+			console.log(obj1.toString());
+			
+			obj1.empId = "VP5025036"; 
+			
+			console.log(obj1.toString());
+			
+		}
+		
+		test();
+	</script>
+</head>
+<body>
+	<h1>Objects</h1>
+</body>
+</html>

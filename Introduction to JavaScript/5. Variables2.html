@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Variable</title>
+	<script>
+		var myVar = "seshu";
+		function testVariables(){
+			console.log(myVar);
+			myVar = "test";
+			console.log(myVar);
+			var newVar = 'hai';
+			console.log(newVar);
+			
+			newVar1 = 'for global scope';
+			console.log(newVar1);
+		}
+		
+		function testVariables2(){
+			console.log(myVar);
+			console.log(typeof newVar);
+			//console.log(newVar);
+			console.log(newVar1);
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Variable declaration</h1>
+	<input type="submit" value="Button1" onclick="testVariables()"> 
+	<input type="submit" value="Button2" onclick="testVariables2()"> 
+</body>
+</html>
