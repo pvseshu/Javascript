@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Elements manipulation</title>
+	<script>
+		
+		function addNewElement(){
+			document.querySelector('#finalDiv').innerHTML = '<div>test3</div>';
+			
+			var eleArr = document.querySelectorAll('.minhig1');
+			for(var i=0; i<eleArr.length; i++){
+				eleArr[i].innerHTML = '<div>test4</div>';
+			}
+		}
+		
+		function changeAttribute(){
+			document.getElementById('btn1').value = 'new name';
+			document.getElementById('btn1').setAttribute('value', 'changed name');
+		}
+		
+		function changeStyle(){
+			document.getElementById('finalDiv').style.backgroundColor = '#B7D5D6';
+			document.getElementById('finalDiv').style.border = '5px solid yellow';
+			console.log(document.getElementById('finalDiv').style);
+		}
+	</script>
+	<style>
+		div{
+			border: 1px solid #116D11;
+		}
+		.minhig1{
+			min-height:100px;
+		}
+		
+		.minhig2{
+			min-height:200px;
+		}
+		
+		.cornerBorder{
+			border-radius: 10px;
+		}
+		
+		div.minhig1{
+			background-color: #B5B524;
+		}
+	</style>
+</head>
+<body>
+	<div class="minhig1 cornerBorder">
+		<pre>US intelligence whistle-blower Edward Snowden on Thursday hailed a European Parliament vote urging European 
+		Union member states to take him in and offer protection as an "extraordinary" gesture of support.
+
+		In a resolution, EU lawmakers called on the bloc's 28 member states to grant protection to Mr Snowden as a 
+		"human rights defender" after he blew the lid on the US government's mass surveillance programmes.</pre>
+	</div>
+	<br>
+	<div class="minhig1">
+		
+	</div>
+	<br>
+	<div id="finalDiv" class="minhig2">
+		<div class="childdiv"> </div>
+	</div>
+<br>
+
+<input type="submit" value="Add new element" onclick="addNewElement()" >
+<input type="submit" value="Change my name" id="btn1" onclick="changeAttribute()" >
+<input type="submit" value="Change Style" onclick="changeStyle()" >
+</body>
+</html>

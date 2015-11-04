@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Manipulation methods</title>
+	<script>
+		function getElements(){
+			console.log(document.getElementsByTagName('div'));
+			console.log(document.getElementsByClassName('minhig1'));
+			console.log(document.getElementById('finalDiv'));
+		}
+		
+		function getElementsByQuery(){
+			console.log(document.querySelector('div'));
+			console.log(document.querySelectorAll('div'));
+			
+			console.log(document.querySelectorAll('.minhig1'));
+			console.log(document.querySelectorAll('.minhig1.cornerBorder'));
+			
+			console.log(document.querySelectorAll('div .childdiv'));
+			console.log(document.querySelectorAll('#finalDiv>.childdiv'));
+		}
+	</script>
+	<style>
+		div{
+			border: 1px solid #116D11;
+		}
+		.minhig1{
+			min-height:100px;
+		}
+		
+		.minhig2{
+			min-height:200px;
+		}
+		
+		.cornerBorder{
+			border-radius: 10px;
+		}
+		
+		div.minhig1{
+			background-color: #B5B524;
+		}
+	</style>
+</head>
+<body>
+	<div class="minhig1 cornerBorder">
+		<pre>US intelligence whistle-blower Edward Snowden on Thursday hailed a European Parliament vote urging European 
+		Union member states to take him in and offer protection as an "extraordinary" gesture of support.
+
+		In a resolution, EU lawmakers called on the bloc's 28 member states to grant protection to Mr Snowden as a 
+		"human rights defender" after he blew the lid on the US government's mass surveillance programmes.</pre>
+	</div>
+	<br>
+	<div class="minhig1">
+		
+	</div>
+	<br>
+	<div id="finalDiv" class="minhig2">
+		<div class="childdiv"> </div>
+	</div>
+<br>
+
+<input type="submit" value="Get elements" onclick="getElements()" >
+<input type="submit" value="Get elements by query" onclick="getElementsByQuery()" >
+</body>
+</html>

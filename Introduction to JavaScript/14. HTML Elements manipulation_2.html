@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Elements manipulation</title>
+	<script>
+		function addNewControl(){
+			var div = document.createElement('div');
+			div.textContent = "My new div";
+			div.setAttribute('class','greenBG');
+			document.getElementById('mydiv').appendChild(div);
+		}
+		
+		function removeControl(){
+			var control = document.getElementById('mydiv');
+			control.removeChild(document.getElementsByClassName('greenBG')[0]);
+		}
+		
+		function replaceControl(){
+			var div = document.createElement('div');
+			div.textContent = "My another div";
+			div.setAttribute('class','yellowBG');
+			document.getElementById('mydiv').replaceChild(div, document.getElementsByClassName('greenBG')[0]);
+		}
+	</script>
+	<style>
+		div{
+			border: 1px solid #116D11;
+		}
+		.minhig1{
+			min-height:100px;
+		}
+		
+		.minhig2{
+			min-height:200px;
+		}
+		
+		.cornerBorder{
+			border-radius: 10px;
+		}
+		
+		div.minhig1{
+			background-color: #B5B524;
+		}
+		
+		.greenBG{
+			color: red;
+			font-size: 18px;
+			font-weight:bold;
+		}
+		
+		
+		.yellowBG{
+			color: white;
+			font-size: 28px;
+			font-weight:bold;
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="minhig1" id="mydiv" > </div>
+	<br>
+	<input type="submit" value="Add new div with text" onclick="addNewControl()" >
+	
+		<input type="submit" value="Remove New div" onclick="removeControl()" >
+		
+		<input type="submit" value="Replave div" onclick="replaceControl()" >
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+	<script>
+		function checkService(){
+			alert('check service -- onload event');
+			document.getElementById("btn1").onclick = btn1_click;
+			//document.getElementById("btn1").addEventListener('click',btn1_click);
+		}
+		
+		function btn1_click(eve){
+			alert('This function added to button from javascript');
+		}
+		
+		function removeBtnEve(){
+			document.getElementById("btn1").removeEventListener('click',btn1_click)
+		}
+		
+		function nameChange(){
+			document.getElementById("spnName").innerHTML = document.getElementById("txtName").value;
+		}
+		
+		function divMouseOver(){
+			document.getElementById("mouseDiv").style.backgroundColor = 'red';
+		}
+		
+		function divMouseOut(){
+			document.getElementById("mouseDiv").style.backgroundColor = 'white';
+		}
+	</script>
+	<style>
+		#mouseDiv{
+			border: 1px solid black;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body onload="checkService()">
+	
+	<input type="text" id="txtName" onchange="nameChange()">
+	
+	<dir id="spnName"  > </dir>
+	<br>
+	<div id="mouseDiv" onmouseover="divMouseOver()" onmouseout="divMouseOut()" > mouse events </div>
+	<br>
+	<input type="submit" id="btn1" value="Add event">
+	<input type="submit" value="Remove event" onclick="removeBtnEve()">
+</body>
+</html>
