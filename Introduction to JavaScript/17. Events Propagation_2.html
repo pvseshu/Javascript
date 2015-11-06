@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events Propagation</title>
+	<script>
+		function parentdivClick(eve){
+			console.log(' parent div Clicked ');
+		}	
+		
+		function childdivClick(eve){
+			console.log(' child div Clicked ');
+			eve.stopPropagation();
+		}
+	</script>
+	<style>
+		.parentDiv{
+			min-height:100px;
+			background-color: green;
+			padding: 10px;
+		}
+		.childDiv{
+			min-height:80px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="parentDiv" onclick="parentdivClick(event)">
+		<div class="childDiv" onclick="childdivClick(event)">
+			child div
+		</div>
+	</div>
+
+</body>
+</html>

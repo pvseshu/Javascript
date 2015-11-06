@@ -5,12 +5,13 @@
 	<script>
 		function checkService(){
 			alert('check service -- onload event');
-			document.getElementById("btn1").onclick = btn1_click;
-			//document.getElementById("btn1").addEventListener('click',btn1_click);
+			//document.getElementById("btn1").onclick = btn1_click;
+			document.getElementById("btn1").addEventListener('click',btn1_click);
 		}
 		
-		function btn1_click(eve){
+		function btn1_click(seshu){
 			alert('This function added to button from javascript');
+
 		}
 		
 		function removeBtnEve(){

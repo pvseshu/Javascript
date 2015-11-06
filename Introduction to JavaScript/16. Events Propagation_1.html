@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events Propagation</title>
+	<script>
+		function divClick(eve){
+			debugger;
+		}	
+		
+		function linkclicked(eve){
+			alert('user clicked on anchor');
+			eve.preventDefault();
+		}
+	</script>
+	<style>
+		.parentDiv{
+			min-height:100px;
+			background-color: green;
+			padding: 10px;
+		}
+		.childDiv{
+			min-height:80px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="parentDiv" onclick="divClick(event)">
+		<div class="childDiv">
+			child div
+		</div>
+	</div>
+	
+	<a href="http://google.com/" onclick="linkclicked(event)">Go to google.com</a>
+</body>
+</html>

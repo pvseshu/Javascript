@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date</title>
+	<script>
+				
+		function pageLoad(){
+			var currDate = new Date();
+			console.log(currDate);
+			
+			var dat1 = new Date("November 03, 2015 11:13:00"); //november 03, 2015 11:13:00 //November 03, 2015 21:13:00
+			console.log(dat1);
+			
+			var dat2 = new Date(1111993450000);
+			console.log(dat2);
+			
+			var dat3 = new Date(2015,8,05);  // year, month, day, hour, minute, second, and millisecond
+			console.log(dat3);
+			
+			var dat4 = new Date(2015,8,05,11,11,11,11);  
+			console.log(dat4);
+			
+			var dat5 = new Date("2015-04");
+			console.log(dat5);
+		}
+	</script>
+	
+</head>
+<body onload="pageLoad()">
+	
+
+</body>
+</html>

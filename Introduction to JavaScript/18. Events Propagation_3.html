@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events Propagation</title>
+	<script>
+		function parentdivClick1(eve){
+			console.log(' parent div Clicked 1');
+			eve.stopImmediatePropagation();
+		}	
+		
+		function parentdivClick2(eve){
+			console.log(' parent div Clicked 2');
+		}
+		
+		function pageLoad(){
+			document.getElementById("div1").addEventListener('click',parentdivClick1);
+			document.getElementById("div1").addEventListener('click',parentdivClick2);
+		}
+	</script>
+	<style>
+		.parentDiv{
+			min-height:100px;
+			background-color: green;
+			padding: 10px;
+		}
+		.childDiv{
+			min-height:80px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body onload="pageLoad()">
+	<div  id="div1" class="parentDiv" >
+		<div class="childDiv" >
+			child div
+		</div>
+	</div>
+
+</body>
+</html>
