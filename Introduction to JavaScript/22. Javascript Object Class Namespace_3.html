@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Object/ Class/ Namespace</title>
+	
+    <script>
+	
+        function pageLoad() {
+          
+            var emp = new organization.employee();
+            emp.id = '123';
+            emp.name = 'atish';
+			
+            console.log(emp.toString());
+			console.log(emp.getName());
+			console.log(emp.getNameToUppercase());
+			
+			emp = new organization.employee();
+			emp.id = '456';
+            emp.name = 'betchu';
+			console.log(emp.toString());
+			
+			
+			
+			
+			
+			var dep = new organization.department();
+			dep.name = 'BFS';
+			dep.director = 'Atish';
+			dep.addEmployee(emp);
+			
+			emp = new organization.employee();
+            emp.id = '789';
+            emp.name = 'venkat';
+			
+			dep.addEmployee(emp);
+			
+			console.log(dep);
+			
+			console.log(dep.getEmployee('456'));
+        }
+		
+		//organization is namespace and employee, department are classes in organization
+		var organization = function(){
+		
+			var organization = {};
+			organization.name = 'syntel';
+			organization.employee = function(id,name){
+				this.id = id;
+				this.name = name;
+				this.toString = function(){
+					return this.id + ", " + this.name;
+				};
+				
+				this.getName = function(){
+					return this.name;
+				};
+				
+				this.getNameToUppercase = function(){
+					return this.name.toUpperCase();
+				};
+			}
+		
+		
+			organization.department = function(){
+				this.name = '';
+				this.director = '';
+				this.employees = [];
+				
+				this.addEmployee = function(obj){
+					this.employees.push(obj);
+				};
+				
+				this.getEmployee = function(employeeid){
+					for(var i=0; i < this.employees.length; i++)
+					{
+						if(this.employees[i].id == employeeid){
+							return this.employees[i];
+						}
+					}
+				};
+			}
+			
+			return organization;
+		}();	
+		
+		
+    </script>
+</head>
+
+<body onload="pageLoad()">
+
+</body>
+
+</html>

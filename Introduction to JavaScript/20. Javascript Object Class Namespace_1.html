@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Object/ Class/ Namespace</title>
+	
+    <script>
+	
+        var empObj = {
+            id: '123',
+            name: 'venkat'
+        };
+		
+        var employeeColl = [];
+
+        function pageLoad() {
+            console.log(empObj);
+			
+            //instance of class - object
+            var emp = new employee();
+            emp.id = '123';
+            emp.name = 'atish';
+            console.log(emp);
+            employeeColl.push(emp);
+			
+            emp = new employee();
+            console.log(emp);
+            emp.id = '134';
+            emp.name = 'atish';
+            employeeColl.push(emp);
+			
+            emp = new employee();
+            emp.id = '156';
+            emp.name = 'andy';
+            employeeColl.push(emp);
+			
+            //constructor class
+            emp = new employee('789', 'seshu');
+            employeeColl.push(emp);
+        }
+		
+        //Employee class
+       /* function employee() {
+            this.id = '';
+            this.name = '';
+			this.address = '';
+        }*/
+		
+        //Employee class with constructor
+        function employee(id,name){
+			this.id = id;
+			this.name = name;
+        }
+    </script>
+</head>
+
+<body onload="pageLoad()">
+
+</body>
+
+</html>

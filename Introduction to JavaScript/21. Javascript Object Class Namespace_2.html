@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Object/ Class/ Namespace</title>
+	
+    <script>
+	
+        function pageLoad() {
+          
+            var emp = new employee();
+            emp.id = '123';
+            emp.name = 'atish';
+            console.log(emp.toString());
+			console.log(emp.getName());
+			console.log(emp.getNameToUppercase());
+			
+			
+			//department object
+			var dep = new department();
+			dep.name = 'BFS';
+			dep.director = 'Atish';
+			dep.addEmployee(emp);
+			
+			emp = new employee();
+            emp.id = '456';
+            emp.name = 'betchu';
+			
+			dep.addEmployee(emp);
+			
+			console.log(dep);
+			
+			console.log(dep.getEmployee('456'));
+        }
+		
+        //Employee class with constructor
+        function employee(id,name){
+			this.id = id;
+			this.name = name;
+			
+			this.toString = function(){
+				var str = this.id + ", " + this.name;
+				return str;
+			};
+			
+			this.getName = function(){
+				return this.name;
+			};
+			
+			this.getNameToUppercase = function(){
+				return this.name.toUpperCase();
+			};
+        }
+		
+		function department(){
+			this.name = '';
+			this.director = '';
+			this.employees = [];
+			
+			this.addEmployee = function(obj){
+				this.employees.push(obj);
+			};
+			
+			this.getEmployee = function(employeeid){
+				for(var i=0; i < this.employees.length; i++)
+				{
+					if(this.employees[i].id == employeeid){
+						return this.employees[i];
+					}
+				}
+			};
+		}
+    </script>
+</head>
+
+<body onload="pageLoad()">
+
+</body>
+
+</html>
